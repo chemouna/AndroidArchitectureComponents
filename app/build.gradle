@@ -37,7 +37,7 @@ dependencies {
   annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
   annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
 
-  compile "io.reactivex.rxjava2:rxjava:$rxJava2Vgersion"
+  compile "io.reactivex.rxjava2:rxjava:$rxJava2Version"
   compile "io.reactivex.rxjava2:rxandroid:$rxAndroid2Version"
   compile "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion"
 
