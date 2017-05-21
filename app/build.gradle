@@ -3,14 +3,16 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.3"
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
   defaultConfig {
     applicationId "com.mounacheikhna.archicomponents"
-    minSdkVersion 15
-    targetSdkVersion 25
-    versionCode 1
-    versionName "1.0"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+
+    versionCode rootProject.ext.versionCode
+    versionName rootProject.ext.versionName
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
   buildTypes {
@@ -23,11 +25,58 @@ android {
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
-  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+  compile "com.android.support:appcompat-v7:$supportVersion"
+  compile "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+  compile "com.jakewharton:butterknife:$butterKnifeVersion"
+  annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+  compile "com.google.dagger:dagger:$daggerVersion"
+  compile "com.google.dagger:dagger-android:$daggerVersion"
+  compile "com.google.dagger:dagger-android-support:$daggerVersion"
+  annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+  annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+  compile "io.reactivex.rxjava2:rxjava:$rxJava2Vgersion"
+  compile "io.reactivex.rxjava2:rxandroid:$rxAndroid2Version"
+  compile "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion"
+
+  compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+  compile "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+  compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+  compile "com.squareup.okhttp3:okhttp:$okhttpVersion"
+
+  compile "com.google.code.gson:gson:$gsonVersion"
+
+  provided "com.google.auto.value:auto-value:$autoValueVersion"
+  annotationProcessor "com.google.auto.value:auto-value:$autoValueVersion"
+
+  annotationProcessor "com.ryanharter.auto.value:auto-value-parcel:$autoValueParcelVersion"
+
+  provided "com.ryanharter.auto.value:auto-value-gson:$autoValueGsonVersion"
+  annotationProcessor "com.ryanharter.auto.value:auto-value-gson:$autoValueGsonVersion"
+
+  compile "com.android.support:recyclerview-v7:$supportVersion"
+
+  compile "com.google.android.gms:play-services-location:$playServicesVersion"
+
+  compile "com.android.support:design:$supportVersion"
+  compile "com.android.support:cardview-v7:$supportVersion"
+
+  //compile "com.airbnb.android:lottie:$lottieVersion"
+
+  compile "com.squareup.sqlbrite:sqlbrite:$sqlBrite"
+  compile "com.github.akarnokd:rxjava2-interop:$rxjavaInterop"
+
+  debugCompile "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
+
+  debugCompile "com.facebook.stetho:stetho:$stethoVersion"
+  debugCompile "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
+
+  testCompile "junit:junit:$jUnitVersion"
+  testCompile "org.mockito:mockito-core:$mockitoVersion"
+
+  androidTestCompile("com.android.support.test.espresso:espresso-core:$espressoVersion", {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-  compile 'com.android.support:appcompat-v7:25.3.1'
-  testCompile 'junit:junit:4.12'
-  compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
