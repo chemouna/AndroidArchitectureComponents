@@ -58,6 +58,9 @@ ext {
   rxjavaInterop = "0.9.7"
   constraintLayoutVersion = "1.0.2"
 
+  archLifecycleVersion = "1.0.0-alpha1"
+  archRoomVersion = "1.0.0-alpha1"
+
   //Test libraries
   jUnitVersion = '4.12'
   mockitoVersion = '2.7.22'

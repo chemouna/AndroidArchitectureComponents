@@ -26,6 +26,12 @@ android {
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+  compile "android.arch.lifecycle:extensions:$archLifecycleVersion"
+  compile "android.arch.persistence.room:runtime:$archRoomVersion"
+  annotationProcessor "android.arch.lifecycle:compiler:$archLifecycleVersion";
+  annotationProcessor "android.arch.persistence.room:compiler:$archRoomVersion";
+
   compile "com.android.support:appcompat-v7:$supportVersion"
   compile "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
   compile "com.jakewharton:butterknife:$butterKnifeVersion"
