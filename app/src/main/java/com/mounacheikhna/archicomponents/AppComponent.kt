@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Singleton @Component(
     modules = arrayOf(AndroidInjectionModule::class, AppModule::class, MainActivityModule::class))
-interface AppComponent {
+open interface AppComponent {
 
   @Component.Builder interface Builder {
     @BindsInstance
